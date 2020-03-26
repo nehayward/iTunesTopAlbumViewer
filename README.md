@@ -24,6 +24,8 @@ This is a simple app to view the top 100 albums and open them in the Music app.
 
 - [x] Open album in iTunes
 
+- [ ] Add Error Handling
+
 ## Screenshots
 
 ### iOS
