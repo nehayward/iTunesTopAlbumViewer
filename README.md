@@ -1,4 +1,4 @@
-# iTunes Top AlbumViewer
+# iTunes Top Album Viewer
 
 <p align="center"/>
     <img src="Images/Icon.png" />
@@ -23,6 +23,8 @@ This is a simple app to view the top 100 albums and open them in the Music app.
 - [x] Browse the top 100 albums across all generes on iTunes
 
 - [x] Open album in iTunes
+
+- [ ] Add Error Handling
 
 ## Screenshots
 
