@@ -1,4 +1,4 @@
-# iTunes Top AlbumViewer
+# iTunes Top Album Viewer
 
 <p align="center"/>
     <img src="Images/Icon.png" />
