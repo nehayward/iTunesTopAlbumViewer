@@ -12,6 +12,12 @@ final class AlbumTableViewController: UITableViewController {
     
     private var feedresults: [FeedResult] = []
     private let feedLoading: FeedResultLoadingFunction
+    private lazy var refresh: UIRefreshControl = {
+        var refresh = UIRefreshControl()
+        refresh.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refresh.addTarget(self, action: #selector(refresh(_:)), for: .valueChanged)
+        return refresh
+    }()
 
     private var state: State = .empty {
         willSet {
@@ -36,6 +42,7 @@ final class AlbumTableViewController: UITableViewController {
     
     func setup() {
         title = "Top 100 Albums"
+        tableView.refreshControl = refresh
         tableView.register(AlbumViewCell.self, forCellReuseIdentifier: AlbumViewCell.reuseIdentifier)
     }
     
@@ -46,6 +53,7 @@ final class AlbumTableViewController: UITableViewController {
             self.feedresults = feed
             self.tableView.reloadData()
             self.state = .loaded
+            self.refresh.endRefreshing()
         }
     }
     
@@ -88,6 +96,11 @@ final class AlbumTableViewController: UITableViewController {
             tableView.tableFooterView = activity
         }
         tableView.reloadData()
+    }
+    
+    // MARK: Target/Actions
+    @objc func refresh(_ sender: Any) {
+        fetchFeed()
     }
 }
 
