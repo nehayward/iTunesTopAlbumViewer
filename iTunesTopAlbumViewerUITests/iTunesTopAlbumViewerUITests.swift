@@ -9,34 +9,42 @@
 import XCTest
 
 class iTunesTopAlbumViewerUITests: XCTestCase {
-
+    
+    var app: XCUIApplication!
+    
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-
-        // In UI tests it is usually best to stop immediately when a failure occurs.
         continueAfterFailure = false
-
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
+        app = XCUIApplication()
+        
+        // MARK: Mock Network Calls
+        app.launchArguments.append("-MockNetwork")
+        app.launchArguments.append("YES")
     }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    
+    func testDetailSegue() {
+        app.launch()
+        
+        let element = app.tables.children(matching: .cell).element(boundBy: 0).staticTexts["After Hours"]
+        element.tap()
+        
+        XCTAssertTrue(app.images["Album Cover Image"].exists)
     }
-
-    func testExample() {
-        // UI tests must launch the application that they test.
-        let app = XCUIApplication()
+    
+    func testOpeningAlbum() {
         app.launch()
 
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        let element = app.tables.children(matching: .cell).element(boundBy: 0).staticTexts["After Hours"]
+        element.tap()
+        app.buttons["Apple Music Link"].tap()
+        app.activate()
+        XCTAssertTrue(app.buttons["Apple Music Link"].waitForExistence(timeout: 1))
     }
 
     func testLaunchPerformance() {
         if #available(macOS 10.15, iOS 13.0, tvOS 13.0, *) {
             // This measures how long it takes to launch your application.
             measure(metrics: [XCTOSSignpostMetric.applicationLaunch]) {
-                XCUIApplication().launch()
+                app.launch()
             }
         }
     }
