@@ -79,7 +79,7 @@ final class AlbumTableViewController: UITableViewController {
                 return
         }
         let photo = feedresults[indexPath.row]
-        navigationController?.pushViewController(DetailPhotoViewController(with: photo, albumCoverImage: image), animated: true)
+        navigationController?.pushViewController(AblumDetailViewController(with: photo, albumCoverImage: image), animated: true)
     }
     
     private func setFooterView(with state: State) {
@@ -158,7 +158,7 @@ extension AlbumTableViewController {
          
          animator.addCompletion {
              let photo = self.feedresults[index]
-             self.navigationController?.pushViewController(DetailPhotoViewController(with: photo, albumCoverImage: image), animated: true)
+             self.navigationController?.pushViewController(AblumDetailViewController(with: photo, albumCoverImage: image), animated: true)
          }
      }
 }

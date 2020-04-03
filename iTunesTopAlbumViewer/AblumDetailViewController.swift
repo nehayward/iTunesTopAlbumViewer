@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-final class DetailPhotoViewController: UIViewController {
+final class AblumDetailViewController: UIViewController {
     
     private let album: FeedResult
     
