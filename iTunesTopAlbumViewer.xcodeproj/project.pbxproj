@@ -27,7 +27,7 @@
 		01C54213242AAD92005AB3FF /* iTunesTopAlbumViewerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C54212242AAD92005AB3FF /* iTunesTopAlbumViewerUITests.swift */; };
 		01C54222242AB54E005AB3FF /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C54221242AB54E005AB3FF /* NetworkManager.swift */; };
 		01C54225242AB685005AB3FF /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C54224242AB685005AB3FF /* Feed.swift */; };
-		01C54229242ABBA0005AB3FF /* Endpoint+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C54228242ABBA0005AB3FF /* Endpoint+Extensions.swift */; };
+		01CD0669243BB527008C4D84 /* Endpoint+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C54228242ABBA0005AB3FF /* Endpoint+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -316,13 +316,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01CD0669243BB527008C4D84 /* Endpoint+Extensions.swift in Sources */,
 				01636475242BC4420073AB7A /* FeedResult.swift in Sources */,
 				010B1BE3242AD76C0070B730 /* AlbumViewCell.swift in Sources */,
 				01C54222242AB54E005AB3FF /* NetworkManager.swift in Sources */,
 				01C541F5242AAD8F005AB3FF /* AlbumTableViewController.swift in Sources */,
 				0190DBD6242BAA2100708FFF /* Genre.swift in Sources */,
 				0190DBD8242BAA3800708FFF /* NetworkError.swift in Sources */,
-				01C54229242ABBA0005AB3FF /* Endpoint+Extensions.swift in Sources */,
 				01636474242BC43E0073AB7A /* Author.swift in Sources */,
 				01636477242BEB6D0073AB7A /* Handlers.swift in Sources */,
 				01C541F1242AAD8F005AB3FF /* AppDelegate.swift in Sources */,
@@ -565,6 +565,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = iTunesTopAlbumViewerTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -606,6 +607,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = iTunesTopAlbumViewerUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

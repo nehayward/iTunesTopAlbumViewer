@@ -97,24 +97,24 @@ class NetworkManager {
 
 extension NetworkManager {
     static var getFeed: FeedResultLoadingFunction  = { handler in
-        NetworkManager.shared.request(.topAlbums()) { (result) in
+        NetworkManager.shared.request(.topAlbums(), then: { (result) in
             switch result {
             case .success(let feedresults):
                 handler(feedresults)
-            case .failure(_):
-                break
+            case .failure(let error):
+                handler([])
             }
-        }
+        }, handledOn: .main)
     }
     
     static var getImage: ImageLoadingFunction  = { url, handler in
-        NetworkManager.shared.downloadImage(url) { (result) in
+        NetworkManager.shared.downloadImage(url, then: { (result) in
             switch result {
             case .success(let image):
                 handler(image)
-            default:
+            case .failure(let error):
                 break
             }
-        }
+        })
     }
 }
